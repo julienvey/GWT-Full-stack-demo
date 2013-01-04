@@ -2,9 +2,9 @@ package com.zenika.resanet.client.view.login.desktop;
 
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.uibinder.client.UiBinder;
-import com.google.gwt.user.client.ui.Composite;
-import com.google.gwt.user.client.ui.HasValue;
-import com.google.gwt.user.client.ui.Widget;
+import com.google.gwt.uibinder.client.UiField;
+import com.google.gwt.user.client.ui.*;
+import com.google.inject.Inject;
 import com.zenika.resanet.client.view.login.LoginView;
 
 
@@ -15,17 +15,29 @@ public class LoginDesktopView extends Composite implements LoginView {
     }
     private static LoginDesktopViewUiBinder binder = GWT.create(LoginDesktopViewUiBinder.class);
 
-    public LoginDesktopView() {
+    @UiField(provided = true)
+    protected LoginResources resources;
+
+    @UiField
+    protected TextBox loginTextBox;
+
+    @UiField
+    protected PasswordTextBox passwordTextBox;
+
+    @Inject
+    public LoginDesktopView(LoginResources resources) {
+        this.resources = resources;
+        resources.style().ensureInjected();
         initWidget(binder.createAndBindUi(this));
     }
 
     @Override
     public HasValue<String> getLoginInput() {
-        return null;  //To change body of implemented methods use File | Settings | File Templates.
+        return loginTextBox;
     }
 
     @Override
     public HasValue<String> getPasswordInput() {
-        return null;  //To change body of implemented methods use File | Settings | File Templates.
+        return passwordTextBox;
     }
 }

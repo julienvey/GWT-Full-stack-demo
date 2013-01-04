@@ -13,6 +13,7 @@ public class Launcher implements EntryPoint {
     @Override
     public void onModuleLoad() {
         SimplePanel mainPanel = new SimplePanel();
+        mainPanel.addStyleName("container");
         RootPanel.get().add(mainPanel);
 
         INJECTOR.getActivityManager().setDisplay(mainPanel);
