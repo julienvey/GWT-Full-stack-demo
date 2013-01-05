@@ -16,5 +16,11 @@ public interface LoginResources extends ClientBundle {
 
     interface Style extends CssResource {
         String logo();
+
+        String loginPanel();
+
+        String button();
+
+        String buttonPanel();
     }
 }

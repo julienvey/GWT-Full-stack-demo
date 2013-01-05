@@ -1,18 +1,23 @@
 package com.zenika.resanet.client.view.login.desktop;
 
 import com.google.gwt.core.client.GWT;
+import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
+import com.google.gwt.uibinder.client.UiHandler;
 import com.google.gwt.user.client.ui.*;
 import com.google.inject.Inject;
+import com.zenika.resanet.client.socle.SimpleView;
+import com.zenika.resanet.client.view.login.LoginPresenter;
 import com.zenika.resanet.client.view.login.LoginView;
 
 
-public class LoginDesktopView extends Composite implements LoginView {
+public class LoginDesktopView extends SimpleView<LoginPresenter> implements LoginView {
 
     interface LoginDesktopViewUiBinder extends UiBinder<Widget, LoginDesktopView> {
 
     }
+
     private static LoginDesktopViewUiBinder binder = GWT.create(LoginDesktopViewUiBinder.class);
 
     @UiField(provided = true)
@@ -29,6 +34,16 @@ public class LoginDesktopView extends Composite implements LoginView {
         this.resources = resources;
         resources.style().ensureInjected();
         initWidget(binder.createAndBindUi(this));
+    }
+
+    @UiHandler("resetButton")
+    public void handleResetButton(ClickEvent event) {
+        presenter.reset();
+    }
+
+    @UiHandler("connectButton")
+    public void handleConnectButton(ClickEvent event) {
+        presenter.connect();
     }
 
     @Override

@@ -13,7 +13,9 @@ public abstract class ActivityPresenter<D extends View> extends SimplePresenter<
 
     @Override
     public void start(AcceptsOneWidget acceptsOneWidget, com.google.gwt.event.shared.EventBus eventBus) {
-        acceptsOneWidget.setWidget(display.asWidget());
+        reset();
+        doStart();
+        acceptsOneWidget.setWidget(view.asWidget());
     }
 
     public abstract void doStart();
@@ -30,4 +32,6 @@ public abstract class ActivityPresenter<D extends View> extends SimplePresenter<
     @Override
     public void onStop() {
     }
+
+    public abstract void reset();
 }

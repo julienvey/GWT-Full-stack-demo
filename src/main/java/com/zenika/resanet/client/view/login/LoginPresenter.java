@@ -11,11 +11,19 @@ public class LoginPresenter extends ActivityPresenter<LoginView> {
     @Inject
     public LoginPresenter(LoginView display, EventBus eventBus) {
         super(display, eventBus);
+        display.setPresenter(this);
     }
 
     @Override
     public void doStart() {
     }
 
+    public void reset() {
+        view.getLoginInput().setValue("");
+        view.getPasswordInput().setValue("");
+    }
 
+    public void connect() {
+        // TODO
+    }
 }
