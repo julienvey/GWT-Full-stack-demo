@@ -22,5 +22,6 @@ public interface LoginResources extends ClientBundle {
         String button();
 
         String buttonPanel();
+
     }
 }

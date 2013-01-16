@@ -15,7 +15,6 @@ import com.zenika.resanet.client.view.login.LoginView;
 public class LoginDesktopView extends SimpleView<LoginPresenter> implements LoginView {
 
     interface LoginDesktopViewUiBinder extends UiBinder<Widget, LoginDesktopView> {
-
     }
 
     private static LoginDesktopViewUiBinder binder = GWT.create(LoginDesktopViewUiBinder.class);

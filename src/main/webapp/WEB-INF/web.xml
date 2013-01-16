@@ -5,4 +5,12 @@
          version="2.5">
 	<display-name>accueilclient-gwt</display-name>
 
+  <servlet>
+    <servlet-name>Dispatch</servlet-name>
+    <servlet-class>com.zenika.resanet.server.SimpleDispatchServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Dispatch</servlet-name>
+    <url-pattern>/Resanet/dispatch</url-pattern>
+  </servlet-mapping>
 </web-app>

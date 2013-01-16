@@ -14,6 +14,10 @@ import com.google.web.bindery.event.shared.SimpleEventBus;
 import com.zenika.resanet.client.application.mvp.ResanetActivityMapper;
 import com.zenika.resanet.client.application.mvp.ResanetPlaceHistoryMapper;
 import com.zenika.resanet.client.view.login.LoginPlace;
+import net.customware.gwt.dispatch.client.DefaultExceptionHandler;
+import net.customware.gwt.dispatch.client.DispatchAsync;
+import net.customware.gwt.dispatch.client.ExceptionHandler;
+import net.customware.gwt.dispatch.client.standard.StandardDispatchAsync;
 
 public class ApplicationModule extends AbstractGinModule {
 
@@ -24,6 +28,16 @@ public class ApplicationModule extends AbstractGinModule {
         bind(ActivityMapper.class).to(ResanetActivityMapper.class).in(Singleton.class);
 
         bind(PlaceHistoryMapper.class).to(ResanetPlaceHistoryMapper.class).in(Singleton.class);
+
+        bind(ExceptionHandler.class).to(DefaultExceptionHandler.class).in(Singleton.class);
+
+    }
+
+    @Provides
+    @Singleton
+    @Inject
+    public DispatchAsync provideDispatchAsync(ExceptionHandler exceptionHandler){
+        return new StandardDispatchAsync(exceptionHandler);
     }
 
     @Provides

@@ -1,4 +1,39 @@
 <ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
              xmlns:g='urn:import:com.google.gwt.user.client.ui'>
-  <g:FlowPanel><g:Label>Operateur</g:Label></g:FlowPanel>
+  <ui:with field="resources" type="com.zenika.resanet.client.view.login.desktop.LoginResources"/>
+
+  <g:FlowPanel addStyleNames="{resources.style.loginPanel}">
+    <g:SimplePanel addStyleNames="{resources.style.logo}"/>
+    <g:FlowPanel>
+      <g:HTMLPanel>
+        <table>
+          <tr>
+            <td>Login :</td>
+            <td>
+              <g:TextBox ui:field="loginTextBox"/>
+            </td>
+          </tr>
+          <tr>
+            <td>Téléphone :</td>
+            <td>
+              <g:PasswordTextBox ui:field="phoneTextBox"/>
+            </td>
+          </tr>
+          <tr>
+            <td>Email :</td>
+            <td>
+              <g:PasswordTextBox ui:field="mailTextBox"/>
+            </td>
+          </tr>
+          <tr>
+            <td>Rôle :</td>
+            <td>
+              <g:PasswordTextBox ui:field="roleTextBox"/>
+            </td>
+          </tr>
+        </table>
+      </g:HTMLPanel>
+      <g:Button ui:field="saveButton" text="Enregistrer les modifications" addStyleNames="btn"/>
+    </g:FlowPanel>
+  </g:FlowPanel>
 </ui:UiBinder>

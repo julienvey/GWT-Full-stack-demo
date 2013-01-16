@@ -3,29 +3,29 @@
 
   <ui:with field="resources" type="com.zenika.resanet.client.view.login.desktop.LoginResources"/>
 
-  <g:HTMLPanel addStyleNames="{resources.style.loginPanel}">
+  <g:FlowPanel addStyleNames="{resources.style.loginPanel}">
     <g:SimplePanel addStyleNames="{resources.style.logo}"/>
-    <table>
-      <tr>
-        <td>Login :</td>
-        <td>
-          <g:TextBox ui:field="loginTextBox"/>
-        </td>
-      </tr>
-      <tr>
-        <td>Mot de passe :</td>
-        <td>
-          <g:PasswordTextBox ui:field="passwordTextBox"/>
-        </td>
-      </tr>
-      <tr>
-        <td colspan="2">
-          <g:FlowPanel addStyleNames="{resources.style.buttonPanel}">
-            <g:Button ui:field="resetButton" addStyleNames="btn {resources.style.button}">Reset</g:Button>
-            <g:Button ui:field="connectButton" addStyleNames="btn {resources.style.button}">Se connecter</g:Button>
-          </g:FlowPanel>
-        </td>
-      </tr>
-    </table>
-  </g:HTMLPanel>
+    <g:FlowPanel>
+      <g:HTMLPanel>
+        <table>
+          <tr>
+            <td>Login :</td>
+            <td>
+              <g:TextBox ui:field="loginTextBox"/>
+            </td>
+          </tr>
+          <tr>
+            <td>Mot de passe :</td>
+            <td>
+              <g:PasswordTextBox ui:field="passwordTextBox"/>
+            </td>
+          </tr>
+        </table>
+      </g:HTMLPanel>
+      <g:FlowPanel addStyleNames="{resources.style.buttonPanel}">
+        <g:Button ui:field="resetButton" addStyleNames="btn {resources.style.button}">Reset</g:Button>
+        <g:Button ui:field="connectButton" addStyleNames="btn {resources.style.button}">Se connecter</g:Button>
+      </g:FlowPanel>
+    </g:FlowPanel>
+  </g:FlowPanel>
 </ui:UiBinder>

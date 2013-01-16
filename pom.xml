@@ -14,6 +14,8 @@
     <junit.version>4.10</junit.version>
     <jukito.version>1.1</jukito.version>
     <guava.version>12.0</guava.version>
+    <gin.version>2.0.0</gin.version>
+    <gwt-dispatch.version>1.2.0</gwt-dispatch.version>
   </properties>
 
 
@@ -61,7 +63,20 @@
     <dependency>
       <groupId>com.google.gwt.inject</groupId>
       <artifactId>gin</artifactId>
-      <version>2.0.0</version>
+      <version>${gin.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>net.customware.gwt.dispatch</groupId>
+      <artifactId>gwt-dispatch</artifactId>
+      <version>${gwt-dispatch.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.jukito</groupId>
+      <artifactId>jukito</artifactId>
+      <version>${jukito.version}</version>
+      <scope>test</scope>
     </dependency>
   </dependencies>
 
