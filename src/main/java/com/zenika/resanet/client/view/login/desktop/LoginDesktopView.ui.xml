@@ -2,6 +2,7 @@
              xmlns:g='urn:import:com.google.gwt.user.client.ui'>
 
   <ui:with field="resources" type="com.zenika.resanet.client.view.resources.ResanetResources"/>
+  <ui:with field="messages" type="com.zenika.resanet.client.view.resources.ResanetMessages"/>
 
   <g:FlowPanel addStyleNames="{resources.style.loginPanel}">
     <g:SimplePanel addStyleNames="{resources.style.logo}"/>
@@ -9,13 +10,17 @@
       <g:HTMLPanel>
         <table>
           <tr>
-            <td>Login :</td>
+            <td>
+              <ui:text from="{messages.login} :"/>
+            </td>
             <td>
               <g:TextBox ui:field="loginTextBox"/>
             </td>
           </tr>
           <tr>
-            <td>Mot de passe :</td>
+            <td>
+              <ui:text from="{messages.password} :"/>
+            </td>
             <td>
               <g:PasswordTextBox ui:field="passwordTextBox"/>
             </td>
@@ -23,8 +28,8 @@
         </table>
       </g:HTMLPanel>
       <g:FlowPanel addStyleNames="{resources.style.buttonPanel}">
-        <g:Button ui:field="resetButton" addStyleNames="btn {resources.style.button}">Reset</g:Button>
-        <g:Button ui:field="connectButton" addStyleNames="btn {resources.style.button}">Se connecter</g:Button>
+        <g:Button ui:field="resetButton" addStyleNames="btn {resources.style.button}" text="{messages.reset}"/>
+        <g:Button ui:field="connectButton" addStyleNames="btn {resources.style.button}" text="{messages.connect}"/>
       </g:FlowPanel>
     </g:FlowPanel>
   </g:FlowPanel>
