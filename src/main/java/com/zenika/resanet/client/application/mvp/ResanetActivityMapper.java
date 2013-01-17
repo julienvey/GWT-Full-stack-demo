@@ -5,8 +5,8 @@ import com.google.gwt.activity.shared.ActivityMapper;
 import com.google.gwt.place.shared.Place;
 import com.google.inject.Inject;
 import com.zenika.resanet.client.view.login.LoginPresenter;
-import com.zenika.resanet.client.view.operateur.OperateurPlace;
-import com.zenika.resanet.client.view.operateur.OperateurPresenter;
+import com.zenika.resanet.client.view.operator.OperatorPlace;
+import com.zenika.resanet.client.view.operator.OperatorPresenter;
 
 public class ResanetActivityMapper implements ActivityMapper {
 
@@ -14,14 +14,14 @@ public class ResanetActivityMapper implements ActivityMapper {
     LoginPresenter loginPresenter;
 
     @Inject
-    OperateurPresenter operateurPresenter;
+    OperatorPresenter operatorPresenter;
 
     @Override
     public Activity getActivity(Place place) {
-        if(place instanceof OperateurPlace){
-            return operateurPresenter;
+        if (place instanceof OperatorPlace) {
+            return operatorPresenter;
         }
-       return loginPresenter;
+        return loginPresenter;
     }
 
 }

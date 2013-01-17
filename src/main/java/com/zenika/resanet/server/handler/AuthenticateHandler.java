@@ -21,6 +21,5 @@ public class AuthenticateHandler implements ActionHandler<AuthenticateAction, Au
 
     @Override
     public void rollback(AuthenticateAction action, AuthenticateResult result, ExecutionContext context) throws DispatchException {
-
     }
 }

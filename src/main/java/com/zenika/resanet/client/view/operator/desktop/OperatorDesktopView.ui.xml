@@ -14,21 +14,39 @@
             </td>
           </tr>
           <tr>
+            <td>Nom :</td>
+            <td>
+              <g:TextBox ui:field="firstNameTextBox"/>
+            </td>
+          </tr>
+          <tr>
+            <td>Prénom :</td>
+            <td>
+              <g:TextBox ui:field="lastNameTextBox"/>
+            </td>
+          </tr>
+          <tr>
             <td>Téléphone :</td>
             <td>
-              <g:PasswordTextBox ui:field="phoneTextBox"/>
+              <g:TextBox ui:field="phoneTextBox"/>
             </td>
           </tr>
           <tr>
             <td>Email :</td>
             <td>
-              <g:PasswordTextBox ui:field="mailTextBox"/>
+              <g:TextBox ui:field="mailTextBox"/>
             </td>
           </tr>
           <tr>
             <td>Rôle :</td>
             <td>
-              <g:PasswordTextBox ui:field="roleTextBox"/>
+              <g:TextBox ui:field="roleTextBox"/>
+            </td>
+          </tr>
+          <tr>
+            <td>Mot de passe :</td>
+            <td>
+              <g:PasswordTextBox ui:field="passwordTextBox"/>
             </td>
           </tr>
         </table>

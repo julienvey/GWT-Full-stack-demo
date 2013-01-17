@@ -36,14 +36,14 @@ public class ApplicationModule extends AbstractGinModule {
     @Provides
     @Singleton
     @Inject
-    public DispatchAsync provideDispatchAsync(ExceptionHandler exceptionHandler){
+    public DispatchAsync provideDispatchAsync(ExceptionHandler exceptionHandler) {
         return new StandardDispatchAsync(exceptionHandler);
     }
 
     @Provides
     @Singleton
     @Inject
-    public PlaceController providePlaceController(EventBus eventBus){
+    public PlaceController providePlaceController(EventBus eventBus) {
         return new PlaceController(eventBus);
     }
 

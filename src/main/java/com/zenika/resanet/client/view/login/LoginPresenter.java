@@ -7,7 +7,7 @@ import com.google.inject.Inject;
 import com.google.inject.Singleton;
 import com.google.web.bindery.event.shared.EventBus;
 import com.zenika.resanet.client.socle.ActivityPresenter;
-import com.zenika.resanet.client.view.operateur.OperateurPlace;
+import com.zenika.resanet.client.view.operator.OperatorPlace;
 import com.zenika.resanet.shared.dispatch.action.AuthenticateAction;
 import com.zenika.resanet.shared.dispatch.result.AuthenticateResult;
 import net.customware.gwt.dispatch.client.DispatchAsync;
@@ -32,24 +32,22 @@ public class LoginPresenter extends ActivityPresenter<LoginView> {
     }
 
     public void reset() {
-        view.getLoginInput().setValue("");
-        view.getPasswordInput().setValue("");
+        view.getLoginInput().setValue(null);
+        view.getPasswordInput().setValue(null);
     }
 
     public void connect() {
-        // TODO
         dispatchAsync.execute(new AuthenticateAction(view.getLoginInput().getValue(), view.getPasswordInput().getValue()),
                 new AsyncCallback<AuthenticateResult>() {
                     @Override
                     public void onFailure(Throwable throwable) {
-                        Window.alert("Exception");
+                        Window.alert("Échec de l'authentification");
                     }
 
                     @Override
                     public void onSuccess(AuthenticateResult authenticateResult) {
-                        Window.alert("Success");
+                        placeController.goTo(new OperatorPlace(authenticateResult.getOperator()));
                     }
                 });
-        placeController.goTo(new OperateurPlace(""));
     }
 }

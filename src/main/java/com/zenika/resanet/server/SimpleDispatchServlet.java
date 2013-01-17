@@ -2,6 +2,7 @@ package com.zenika.resanet.server;
 
 import com.google.gwt.user.server.rpc.RemoteServiceServlet;
 import com.zenika.resanet.server.handler.AuthenticateHandler;
+import com.zenika.resanet.server.handler.SaveOperatorHandler;
 import net.customware.gwt.dispatch.client.standard.StandardDispatchService;
 import net.customware.gwt.dispatch.server.DefaultActionHandlerRegistry;
 import net.customware.gwt.dispatch.server.Dispatch;
@@ -16,9 +17,9 @@ public class SimpleDispatchServlet extends RemoteServiceServlet implements Stand
     private Dispatch dispatch;
 
     public SimpleDispatchServlet() {
-
         InstanceActionHandlerRegistry registry = new DefaultActionHandlerRegistry();
         registry.addHandler(new AuthenticateHandler());
+        registry.addHandler(new SaveOperatorHandler());
         dispatch = new SimpleDispatch(registry);
     }
 
@@ -26,8 +27,8 @@ public class SimpleDispatchServlet extends RemoteServiceServlet implements Stand
 
         try {
             return dispatch.execute(action);
-        } catch ( RuntimeException e) {
-            log( "exception while executing " + action.getClass().getName() + ": " + e.getMessage(), e );
+        } catch (RuntimeException e) {
+            log("exception while executing " + action.getClass().getName() + ": " + e.getMessage(), e);
             throw e;
         }
     }
