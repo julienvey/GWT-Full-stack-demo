@@ -11,7 +11,7 @@ import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.client.ui.Widget;
 import com.google.inject.Inject;
 import com.zenika.resanet.client.socle.SimpleView;
-import com.zenika.resanet.client.view.login.desktop.LoginResources;
+import com.zenika.resanet.client.view.resources.ResanetResources;
 import com.zenika.resanet.client.view.operator.OperatorPresenter;
 import com.zenika.resanet.client.view.operator.OperatorView;
 
@@ -25,7 +25,7 @@ public class OperatorDesktopView extends SimpleView<OperatorPresenter> implement
     private static OperateurDesktopViewUiBinder uiBinder = GWT.create(OperateurDesktopViewUiBinder.class);
 
     @UiField(provided = true)
-    protected LoginResources resources;
+    protected ResanetResources resources;
 
     @UiField
     protected TextBox loginTextBox;
@@ -49,7 +49,7 @@ public class OperatorDesktopView extends SimpleView<OperatorPresenter> implement
     protected PasswordTextBox passwordTextBox;
 
     @Inject
-    public OperatorDesktopView(LoginResources resources) {
+    public OperatorDesktopView(ResanetResources resources) {
         this.resources = resources;
         initWidget(uiBinder.createAndBindUi(this));
     }

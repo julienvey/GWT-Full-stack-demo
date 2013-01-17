@@ -13,6 +13,7 @@ import com.google.inject.Inject;
 import com.zenika.resanet.client.socle.SimpleView;
 import com.zenika.resanet.client.view.login.LoginPresenter;
 import com.zenika.resanet.client.view.login.LoginView;
+import com.zenika.resanet.client.view.resources.ResanetResources;
 
 
 public class LoginDesktopView extends SimpleView<LoginPresenter> implements LoginView {
@@ -23,7 +24,7 @@ public class LoginDesktopView extends SimpleView<LoginPresenter> implements Logi
     private static LoginDesktopViewUiBinder binder = GWT.create(LoginDesktopViewUiBinder.class);
 
     @UiField(provided = true)
-    protected LoginResources resources;
+    protected ResanetResources resources;
 
     @UiField
     protected TextBox loginTextBox;
@@ -32,7 +33,7 @@ public class LoginDesktopView extends SimpleView<LoginPresenter> implements Logi
     protected PasswordTextBox passwordTextBox;
 
     @Inject
-    public LoginDesktopView(LoginResources resources) {
+    public LoginDesktopView(ResanetResources resources) {
         this.resources = resources;
         resources.style().ensureInjected();
         initWidget(binder.createAndBindUi(this));

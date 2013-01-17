@@ -1,4 +1,4 @@
-package com.zenika.resanet.client.view.login.desktop;
+package com.zenika.resanet.client.view.resources;
 
 import com.google.gwt.resources.client.ClientBundle;
 import com.google.gwt.resources.client.CssResource;
@@ -6,7 +6,7 @@ import com.google.gwt.resources.client.ImageResource;
 import com.google.inject.Singleton;
 
 @Singleton
-public interface LoginResources extends ClientBundle {
+public interface ResanetResources extends ClientBundle {
 
     @Source("logo.gif")
     ImageResource logo();

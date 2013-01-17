@@ -1,6 +1,6 @@
 <ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
              xmlns:g='urn:import:com.google.gwt.user.client.ui'>
-  <ui:with field="resources" type="com.zenika.resanet.client.view.login.desktop.LoginResources"/>
+  <ui:with field="resources" type="com.zenika.resanet.client.view.resources.ResanetResources"/>
 
   <g:FlowPanel addStyleNames="{resources.style.loginPanel}">
     <g:SimplePanel addStyleNames="{resources.style.logo}"/>
