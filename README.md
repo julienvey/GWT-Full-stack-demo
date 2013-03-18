@@ -5,3 +5,4 @@ GWT-Full-stack-demo
 * Activities & Places
 * Gin
 * GWT-Dispatch
+* Jukito
